@@ -1,0 +1,69 @@
+# === Node ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# === Build Output ===
+dist/
+build/
+out/
+temp/
+.cache/
+.vite/
+.next/
+.storybook-out/
+
+# === Environment Files ===
+.env
+.env.local
+.env.*.local
+
+# === Logs ===
+logs/
+*.log
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Editor Directories ===
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# === Testing ===
+coverage/
+.nyc_output/
+
+# === Misc ===
+*.local
+*.tgz
+*.zip
+*.bak
+*.tmp
+*.orig
+
+# === Public Deployment ===
+/.vercel/
+/.netlify/
+/firebase-debug.log
+.firebase/
+
+# === Storybook ===
+out-storybook/
+storybook-static/
+
+# === Optional: lock VS Code settings only if shared ===
+!.vscode/extensions.json
+!.vscode/settings.json
