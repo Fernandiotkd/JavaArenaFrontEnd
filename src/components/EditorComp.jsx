@@ -1,13 +1,15 @@
 // Editor.jsx
 import { Editor } from '@monaco-editor/react';
 import React from 'react';
+import '../styles/codeeditor.css';
 
 const EditorComp = ({ code, setCode }) => {
   return (
-    <div>
-      <Editor class='codeeditor'
+    <div className='codeeditor' style={{ height: '60%', width: '90%' }}>
+      <Editor
         defaultLanguage="java"
-        style={{ height: '100%', width: '100%' }}
+        value={code}
+        onChange={(value) => setCode(value)}
       />
     </div>
   );

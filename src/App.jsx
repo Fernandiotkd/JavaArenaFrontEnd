@@ -1,21 +1,19 @@
+// App.jsx
 import { useState } from 'react';
 import axios from 'axios';
 import './index.css';
-import EditorComp from './components/EditorComp.jsx';
+import EditorComp from './components/EditorComp';
+import Response from './components/Response';
 
 const App = () => {
-  const [code, setCode] = useState(
-`public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hola Paloma, te amo <3");
-  }
-}`
-  );
+
+  const [code, setCode] = useState('');
   const [output, setOutput] = useState('');
 
   const runCode = async () => {
     try {
       const res = await axios.post("http://localhost:8080/api/execute", { code });
+      console.log("Respuesta del backend:", res.data);
       setOutput(res.data.output);
     } catch (err) {
       setOutput("Error al conectar con el backend.");
@@ -29,8 +27,9 @@ const App = () => {
       <aside class="sidebar">Sidebar</aside>
       <article class="main">
         <h2>Mi Editor de Código</h2>
-        <EditorComp />
-        
+        <button onClick={runCode}>Run</button>
+        <EditorComp code={code} setCode={setCode} />
+        <Response output={output} />
       </article>
       <footer class="footer">footer</footer>
     </div>
