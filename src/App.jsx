@@ -8,13 +8,27 @@ import Response from './components/Response';
 const App = () => {
 
   const [code, setCode] = useState('');
-  const [output, setOutput] = useState('');
+  const [output, setOutput] = useState('Esperando código...');
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const runCode = async () => {
     try {
       const res = await axios.post("http://localhost:8080/api/execute", { code });
       console.log("Respuesta del backend:", res.data);
-      setOutput(res.data.output);
+
+      try{
+        const { message, errorMessage } = res.data;
+        setMessage(message);
+        setErrorMessage(errorMessage);
+
+        setOutput(message || "Sin salida.");
+      } catch (err) {
+        console.log("Error al procesar la respuesta del backend:", err);
+      }
+
+      
+      
     } catch (err) {
       setOutput("Error al conectar con el backend.");
     }
