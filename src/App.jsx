@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './index.css';
+import EditorComp from './components/EditorComp.jsx';
 
 const App = () => {
   const [code, setCode] = useState(
@@ -26,7 +27,11 @@ const App = () => {
       <header class="header">header</header>
       <nav class="navbar">navbar</nav>
       <aside class="sidebar">Sidebar</aside>
-      <article class="main">article</article>
+      <article class="main">
+        <h2>Mi Editor de Código</h2>
+        <EditorComp />
+        
+      </article>
       <footer class="footer">footer</footer>
     </div>
     
