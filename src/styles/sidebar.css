@@ -1,0 +1,11 @@
+.sidebar, .main-content {
+  width: 100%;            /* Cada uno toma la mitad del ancho */
+  height: 100%;         /* Altura completa */
+    background-color: orange;
+}
+
+.sidebar {
+  background-color: blue;
+  color: white;
+  
+}

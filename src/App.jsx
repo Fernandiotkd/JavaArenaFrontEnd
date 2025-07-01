@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import Editor from "@monaco-editor/react";
+import { useState } from 'react';
 import axios from 'axios';
-import './App.css'
+import './index.css';
 
 const App = () => {
   const [code, setCode] = useState(
@@ -23,18 +22,14 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Java Online Runner</h1>
-      <Editor
-        height="40vh"
-        width="80vh"
-        defaultLanguage="java"
-        value={code}
-        onChange={(value) => setCode(value)}
-      />
-      <button onClick={runCode}>Ejecutar</button>
-      <pre>{output}</pre>
+    <div class="grid-container">
+      <header class="header">header</header>
+      <nav class="navbar">navbar</nav>
+      <aside class="sidebar">Sidebar</aside>
+      <article class="main">article</article>
+      <footer class="footer">footer</footer>
     </div>
+    
   );
 };
 
